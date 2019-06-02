@@ -20,7 +20,7 @@
 
   - name: Debug Pyats facts - all
     debug:
-     var: pyats_version.version.rtr_type
+     var: pyats_version.version
 
   - name: Debug Pyats facts - version
     debug:
