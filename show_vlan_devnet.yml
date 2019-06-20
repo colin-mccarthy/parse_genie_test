@@ -1,0 +1,17 @@
+---
+- name: pyats testing
+  hosts: ios
+  gather_facts: no
+  connection: network_cli
+  roles:
+    - ansible-pyats
+  tasks:
+  - include_role:
+      name: ansible-pyats
+      tasks_from: parse_command
+    vars:
+      command: show vlan
+
+  - debug:
+      var: parsed_output
+

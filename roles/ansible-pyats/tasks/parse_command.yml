@@ -1,0 +1,11 @@
+- name: Running command
+  cli_command:
+    command: "{{ command }}"
+  register: cli_output
+
+- debug:
+    var: cli_output.stdout
+
+- name: Parsing output
+  set_fact:
+    parsed_output: "{{ cli_output.stdout | genie_parser(command, 'iosxe') }}"

@@ -1,0 +1,23 @@
+---
+- name: pyats testing
+  hosts: ios
+  gather_facts: no
+  connection: network_cli
+  roles:
+    - ansible-pyats
+
+
+  vars:
+    command: show vlan
+    snapshot_file: "{{ inventory_hostname }}_ntp.json"
+
+
+  tasks:
+  - include_role:
+      name: ansible-pyats
+      tasks_from: compare
+    register: diff
+
+  - name: show diff
+    debug:
+      var: diff

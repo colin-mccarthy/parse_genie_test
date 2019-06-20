@@ -5,4 +5,8 @@
   scm: git
   version: master
 
+- name: ansible-pyats
+  src: https://github.com/CiscoDevNet/ansible-pyats
+  scm: git
+  version: master
 

@@ -1,0 +1,10 @@
+[ios]
+192.168.161.9  ansible_host=192.168.161.9  
+
+[ios:vars]
+
+ansible_ssh_pass=cisco
+ansible_user=pi
+ansible_network_os=ios
+ansible_connection=network_cli
+ansible_python_interpreter=/usr/local//Cellar/python/3.7.3/bin/python3
